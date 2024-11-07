@@ -1,5 +1,4 @@
 export interface ApiConfig {
-  baseUrl: string;
   apiKey?: string;
   timeout?: number;
 }
@@ -10,7 +9,7 @@ export class TypiCode {
   private readonly timeout: number;
 
   constructor(config: ApiConfig) {
-    this.baseUrl = config.baseUrl = "https://jsonplaceholder.typicode.com";
+    this.baseUrl = "https://jsonplaceholder.typicode.com";
     this.apiKey = config.apiKey;
     this.timeout = config.timeout || 30000; // Default 30s timeout
   }
