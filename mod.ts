@@ -1,1 +1,1 @@
-export * from "./main.ts";
+export { TypiCode } from "./main.ts";
