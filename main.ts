@@ -10,7 +10,7 @@ export class TypiCode {
   private readonly timeout: number;
 
   constructor(config: ApiConfig) {
-    this.baseUrl = config.baseUrl.replace(/\/$/, ""); // Remove trailing slash
+    this.baseUrl = config.baseUrl = "https://jsonplaceholder.typicode.com";
     this.apiKey = config.apiKey;
     this.timeout = config.timeout || 30000; // Default 30s timeout
   }
