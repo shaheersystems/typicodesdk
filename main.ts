@@ -1,16 +1,13 @@
 export interface ApiConfig {
-  apiKey?: string;
   timeout?: number;
 }
 
 export class TypiCode {
   private readonly baseUrl: string;
-  private readonly apiKey?: string;
   private readonly timeout: number;
 
   constructor(config: ApiConfig) {
     this.baseUrl = "https://jsonplaceholder.typicode.com";
-    this.apiKey = config.apiKey;
     this.timeout = config.timeout || 30000; // Default 30s timeout
   }
 
@@ -24,10 +21,6 @@ export class TypiCode {
     const headers: Record<string, string> = {
       "Content-Type": "application/json",
     };
-
-    if (this.apiKey) {
-      headers["Authorization"] = `Bearer ${this.apiKey}`;
-    }
 
     try {
       const response = await fetch(url, {
